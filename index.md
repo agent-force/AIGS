@@ -26,7 +26,7 @@ In this work, we review and envision the development of AI-accelerated scientifi
 
 (IV) <b>AI Forms a Research Community</b>. Upon the prosperity of fully-autonomous AI researchers depicted in the previous stage, we envision the collaborations among the agentic researchers foster an AI-formed research community. 
 
-## Baby-AIGS: A Baby Step Towards the Full-Process AIGS System
+## Baby-AIGS: A Baby Step Towards Full-Process AIGS
 
 <div style="text-align:center;">
     <img src="assets/static/system.png" width="95%">
