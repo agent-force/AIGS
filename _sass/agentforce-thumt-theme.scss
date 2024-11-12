@@ -383,3 +383,23 @@ a {
 .site-footer-credits {
   color: $blockquote-text-color;
 }
+
+details {
+  cursor: pointer;
+}
+
+summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+summary::before {
+  content: '▶';
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+  content: '▼';
+}
