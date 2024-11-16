@@ -4,21 +4,17 @@ layout: ai-generated-science
 
 ## Abstract
 
-Rapid development of artificial intelligence has drastically accelerated the development of scientific discovery. Trained with large-scale observation data, deep neural networks extract the underlying patterns in an end-to-end manner and assist human researchers with highly-precised predictions in unseen scenarios. The recent rise of Large Language Models (LLMs) and the empowered autonomous agents enable scientists to gain help through interaction in different stages of their research, including but not limited to literature review, research ideation, idea implementation, and academic writing. However, AI researchers instantiated by foundation model empowered agents with full-process autonomy are still in their infancy. In this paper, we study <b>*AI-Generated Science*</b> (AIGS), where agents independently and autonomously complete the entire research process and discover scientific laws. By revisiting the definition of scientific research ([Popper, 1935](https://www.taylorfrancis.com/books/mono/10.4324/9780203994627/logic-scientific-discovery-karl-popper-karl-popper)), we argue that <b>*falsification*</b> is the essence of both human research process and the design of an AIGS system. Through the lens of *falsification*, prior systems attempting towards AI-Generated Science either lack the part in their design, or rely heavily on existing verification engines that narrow the use in specialized domains. In this work, we propose Baby-AIGS as a baby-step demonstration of a full-process AIGS system, which is a multi-agent system with agents in roles representing key research process. By introducing FalsificationAgent, which hypothesize and then verify possible scientific discoveries, we empower the system with explicit <b>*falsification*</b>. We also incorporate techniques to boost overall <b>*executability*</b> of experiment plans and <b>*creativity*</b> during ideation. Experiments on three tasks preliminarily show that Baby-AIGS could produce meaningful scientific discoveries, though not on par with experienced human researchers. 
-
-## Principles of A Full-process AIGS System
-
-When constructing an AIGS system with full-process autonomy, the desiderata of the system design should refer to the definition of the scientific research process itself. As stated by ([Popper, 1935](https://www.taylorfrancis.com/books/mono/10.4324/9780203994627/logic-scientific-discovery-karl-popper-karl-popper)), scientific research follows a systematic process of proposing novel hypotheses, conducting experiments through trial and error, and falsifying these hypotheses to conclude. While it is widely-believed that <b>*creativity*</b> is indispensable in the process of research - which is also accounted in previous work - the central component of scientific research is <b>*falsification*</b>: designing and executing experiments to validate or refute hypotheses, and falsified hypotheses pose positive contributions to scientific progress as well ([ml-retrospectives](https://ml-retrospectives.github.io/)). Moreover, experienced researchers accumulate practical skills or reusable workflows ([Gil et al., 2007](https://ieeexplore.ieee.org/document/4404805)) from hands-on experimentation, which eases the design and execution of experiments and hypothesis falsification. The abstraction of workflows in experiments enables effective reuse, which reflects a high level of <b>*executability*</b> in scientific research. To recapitulate, a creative idea is the beginning of a piece of scientific research, which is followed by experiments and analyses to be conducted; executability forms the basis for falsification, and a sequence of logically consistent falsification processes turns a novel idea into scientific discoveries with genuine creativity. As a result, <b>*falsification*</b> is the foundation of AI-Generated Science, pillared by experimenting scaffolds accounting for <b>*executability*</b> and targeting at the ultimate goal of research <b>*creativity*</b>. 
+The recent rise of Large Language Models (LLMs) and the empowered autonomous agents enable scientists to gain help through interaction in different stages of their research, including but not limited to literature review, research ideation, idea implementation, and academic writing. However, AI researchers instantiated by foundation model empowered agents with full-process autonomy are still in their infancy. In this paper, we study <b>*AI-Generated Science*</b> (AIGS), where agents independently and autonomously complete the entire research process and discover scientific laws. By revisiting the definition of scientific research ([Popper, 1935](https://www.taylorfrancis.com/books/mono/10.4324/9780203994627/logic-scientific-discovery-karl-popper-karl-popper)), we argue that <b>*falsification*</b> is the essence of both human research process and the design of an AIGS system. Through the lens of *falsification*, prior systems attempting towards AI-Generated Science either lack the part in their design, or rely heavily on existing verification engines that narrow the use in specialized domains. In this work, we propose Baby-AIGS as a baby-step demonstration of a full-process AIGS system, which is a multi-agent system with agents in roles representing key research process. By introducing FalsificationAgent, which hypothesize and then verify possible scientific discoveries, we empower the system with explicit <b>*falsification*</b>. We also incorporate techniques to boost overall <b>*executability*</b> of experiment plans and <b>*creativity*</b> during ideation. Experiments on three tasks preliminarily show that Baby-AIGS could produce meaningful scientific discoveries, though not on par with experienced human researchers. 
 
 ## Four Paradigms of AI-accelerated Scientific Discovery
+
+We review and envision the development of AI-accelerated scientific discovery as four paradigms: 
 
 <div style="text-align:center;">
     <img src="assets/static/four_stages.png" width="95%">
 </div>
 
-In this work, we review and envision the development of AI-accelerated scientific discovery as four paradigms: 
-
-(I) <b>AI as a Performance Optimizer</b>, where deep neural networks are trained with large-scale observation data in a specific scientific problem to extract the patterns in an end-to-end manner. In this paradigm, the AI techniques are used to optimize the specific prediction / regression performance in the pre-defined scientific problem with the consideration of out-of-domain generalization. 
+(I) <b>AI as a Performance Optimizer</b>, where deep neural networks are trained with large-scale observation data in a specific scientific problem to extract the patterns in an end-to-end manner. 
 
 (II) <b>AI as a Research Assistant</b>, where LLM-driven research copilots are used to assist the human research process. 
 
@@ -26,13 +22,21 @@ In this work, we review and envision the development of AI-accelerated scientifi
 
 (IV) <b>AI Forms a Research Community</b>. Upon the prosperity of fully-autonomous AI researchers depicted in the previous stage, we envision the collaborations among the agentic researchers foster an AI-formed research community. 
 
+## Principles of A Full-process AIGS System
+
+When constructing an AIGS system with full-process autonomy, the desiderata of the system design should refer to the full process of scientific research process. While it is widely-believed that <b>*creativity*</b> is indispensable in the process of research - which is also accounted in previous work - the central component of scientific research is <b>*falsification*</b>: designing and executing experiments to validate or refute hypotheses, and falsified hypotheses pose positive contributions to scientific progress as well ([ml-retrospectives](https://ml-retrospectives.github.io/)). Moreover, experienced researchers accumulate practical skills or reusable workflows ([Gil et al., 2007](https://ieeexplore.ieee.org/document/4404805)) from hands-on experimentation, which eases the design and execution of experiments and hypothesis falsification. The abstraction of workflows in experiments enables effective reuse, which reflects a high level of <b>*executability*</b> in scientific research. 
+
+To recapitulate, a creative idea is the beginning of a piece of scientific research, followed by experiments to be conducted; executability forms the basis for falsification, and a sequence of logically consistent falsification processes turns a novel idea into scientific discoveries with genuine creativity. Therefore, <b>*falsification*</b> is the foundation of AI-Generated Science, pillared by experimenting scaffolds accounting for <b>*executability*</b> and targeting at the ultimate goal of <b>*creativity*</b>. 
+
 ## Baby-AIGS: A Baby Step Towards Full-Process AIGS
+
+In our Baby-AIGS system, we recognize that scientific research typically involves the following major phases: *literature review*, *idea formation*, *methodology design*, *experiment execution*, *result analysis*, and *ablation study*. These phases form an iterative circle, with scientific discoveries often emerging through repeated iterations of this process.
 
 <div style="text-align:center;">
     <img src="assets/static/system.png" width="95%">
 </div>
 
-In our Baby-AIGS system, we recognize that scientific research typically involves the following major phases: *literature review*, *idea formation*, *methodology design*, *experiment execution*, *result analysis*, and *ablation study*. These phases form an iterative circle, with scientific discoveries often emerging through repeated iterations of this process. Aiming at building our system more human-like to benefit from these insights, we model the construction of the agents on these phases. Specifically, LiteratureAgent is responsible for literature review, ProposalAgent is responsible for idea formation and methodology design, ExperimentAgent conducts experiment execution, ReviewAgent handles result analysis and FalsificationAgent carries out ablation studies. In the following, we introduce two most important designs in our system.
+Aiming at building our system more human-like to benefit from these insights, we model the construction of the agents on these phases. Specifically, LiteratureAgent is responsible for literature review, ProposalAgent is responsible for idea formation and methodology design, ExperimentAgent conducts experiment execution, ReviewAgent handles result analysis and FalsificationAgent carries out ablation studies. In the following, we introduce two most important designs in our system.
 
 <div style="text-align:center;">
     <img src="assets/static/idea_form.png" width="95%">
@@ -44,17 +48,54 @@ In our Baby-AIGS system, we recognize that scientific research typically involve
 
 ## Experiment Setup and Results
 
-### Data Engineering
+### Selected Research Topics
 
-The task here is to identify key distinguishing features of high-quality datasets, which allows Baby-AIGS to filter and extract high-quality data subsets. Through this approach, Baby-AIGS seeks to enhance data quality and relevance, making downstream tasks more effective.
+* **Data Engineering**: The task is to identify key distinguishing features of high-quality datasets, which allows Baby-AIGS to filter and extract high-quality data subsets. Through this approach, Baby-AIGS seeks to enhance data quality and relevance, making downstream tasks more effective.
 
-### Self-Instruct Alignment
+* **Self-Instruct Alignment**: This task involves constructing an optimal set of seed instructions and using these to iteratively generate an instruction-response dataset for enhanced model self-instruction. By refining the alignment between instructions and responses, Baby-AIGS aims to improve the model's capacity for autonomous learning and adaptation.
 
-This task involves constructing an optimal set of seed instructions and using these to iteratively generate an instruction-response dataset for enhanced model self-instruction. By refining the alignment between instructions and responses, Baby-AIGS aims to improve the model's capacity for autonomous learning and adaptation.
+* **Language Modeling**: In this task, Baby-AIGS experiments with various structural adjustments to language models with the aim of improving pre-training outcomes. Through architecture exploration, the system seeks to enhance both model efficiency and the quality of generated text, as reflected in metrics like perplexity.
 
-### Language Modeling
+### Evaluation
+We evaluate Baby-AIGS based on three key principles central to AIGS systems: <b>*falsification*</b>, <b>*creativity*</b>, and <b>*executability*</b>.
 
-In this task, Baby-AIGS experiments with various structural adjustments to language models with the aim of improving pre-training outcomes. Through architecture exploration, the system seeks to enhance both model efficiency and the quality of generated text, as reflected in metrics like perplexity.
+**Falsification**: We assess Baby-AIGS’s ability to perform falsification through human evaluation, focusing on the falsification process carried out by FalsificationAgent. 
+
+<div style="text-align:center;">
+    <img src="assets/static/falsification.png" width="75%">
+</div>
+
+The results show that Baby-AIGS could produce valid scientific discoveries through falsification, but there are two critical findings that indicate further improvement is needed.
+
+* The average value of the importance score is higher than the consistency and correctness score, indicating that FalsificationAgent could identify important factors potentially related to a scientific discovery but failed to design a concrete experiment plan and verify the hypothesis.
+
+* The p-values indicate that the falsification process of Baby-AIGS is significantly less satisfactory than the existing literature from top conferences from human perspectives.
+
+**Creativity**: We measure the creativity of Baby-AIGS by evaluating the performance improvement of the proposed idea and methodology against the baseline result, i.e., the result from the trivial methodology on the test benchmarks. 
+
+<div style="text-align:center;">
+    <img src="assets/static/creativity-data.png" width="85%">
+</div>
+
+<div style="text-align:center;">
+    <img src="assets/static/creativity-self.png" width="85%">
+</div>
+
+<div style="text-align:center;">
+    <img src="assets/static/creativity-nano.png" width="85%">
+</div>
+
+The results of our three tasks show that Baby-AIGS outperforms the baseline method, demonstrating the system's creativity in ideation and corresponding method design. 
+* For data engineering, Baby-AIGS outperforms AI Scientist with a significant margin, demonstrating the effectiveness of the enriched feedback, including multi-granular metrics, verbose review on both experiment process and methodology design, etc., in exploring research idea. 
+* However, the result of SFT alignment is inferior than Deita ([Liu et al., 2024](https://arxiv.org/pdf/2312.15685)), indicating that the lack of validation benchmarking of specific downstream tasks might result in an suboptimal outcome. 
+
+**Executability**: We measure the executability of Baby-AIGS by comparing the success rates on three selected tasks of AI Scientist ([Lu et al., 2024](https://arxiv.org/abs/2408.06292)) and Baby-AIGS.
+
+<div style="text-align:center;">
+    <img src="assets/static/executability.png" width="85%">
+</div>
+
+Our quantitative analysis highlights significant improvements in executability, with Baby-AIGS achieving nearly 100% success rates in translating the generated ideas into experimental results and the final scientific discovery. This high executability, attributed to our DSL design for errorless experimentation, prevents restarting from in-process failures and enables an efficient automated research process.
 
 ## Discussions
 

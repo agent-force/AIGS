@@ -388,6 +388,11 @@ details {
   cursor: pointer;
 }
 
+/* 隐藏浏览器默认的小三角 */
+details summary::-webkit-details-marker {
+  display: none;
+}
+
 summary {
   list-style: none;
   display: flex;
